@@ -1,5 +1,6 @@
 package com.example.shared_prefrence;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -100,6 +101,16 @@ public class MainActivity extends AppCompatActivity {
                 editor.putString("keypassword",pass);
                 editor.putString("keyconfpassword",cpass);
                 editor.apply();
+
+                //Intent Section
+                Intent intent = new Intent(MainActivity.this, MainActivity2.class);
+                intent.putExtra("First Name",first);
+                intent.putExtra("Last Name",last);
+                intent.putExtra("Email",email);
+                intent.putExtra("Mob No",phno);
+                intent.putExtra("Password",pass);
+
+                startActivity(intent);
             }
         });
     }
